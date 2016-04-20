@@ -5,7 +5,7 @@ After=<%= name %>-<%= process_name %>.service
 
 [Service]
 Environment=PORT=PORT_NUM
-ExecStart=/usr/bin/<%= name %> run <%= process_name %> >> /var/log/<%= name %>/<%= rocess_name %>-PROCESS_NUM.log 2>&1
+ExecStart=/bin/sh -c '/usr/bin/<%= name %> run <%= process_name %> >> /var/log/<%= name %>/<%= process_name %>-PROCESS_NUM.log 2>&1'
 Restart=always
 
 [Install]
